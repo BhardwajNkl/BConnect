@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <head>
+        <h2>BConnect</h2>
+    </head>
+    <main>
+        <div>
+            <form action="" method="post">
+                <% if(message) { %>
+                    <b><%= message %></b><br>
+                <% } %>
+                username: <input name="username" type="text"><br><br>
+                password: <input name="password" type="password"><br><br>
+                <button type="submit" name="login-button">Login</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
