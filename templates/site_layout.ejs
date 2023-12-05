@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="styles/site_layout.css">
+
+    <!-- if it is login page, include login.css -->
+    <% if(page=="login"){ %>
+         <link rel="stylesheet" type="text/css" href="styles/login_partial.css">
+    <% } %>
+    <!-- if it is generate page, include generate.css -->
+    <% if(page=="generate"){ %>
+        <link rel="stylesheet" type="text/css" href="styles/generate_number_partial.css">
+   <% } %>
+    <!-- <link rel="stylesheet" type="text/css" href="styles/generate.css"> -->
+    <!-- if it is home or chat page, include layout1.css -->
+    <% if(page=="home" || page=="chat"){ %>
+        <link rel="stylesheet" type="text/css" href="styles/home_and_chat_inner_layout.css">
+        <% if(page=="home"){ %>
+            <link rel="stylesheet" type="text/css" href="styles/home_partial.css">
+        <% } else{ %>
+            <link rel="stylesheet" type="text/css" href="styles/chat_partial.css">
+        <% } %>
+   <% } %>
+    <!-- <link rel="stylesheet" type="text/css" href="styles/layout1.css"> -->
+
+
+
+</head>
+<body>
+    <div class="header">
+        <div id="header-col1">
+            <!-- nothing here -->
+        </div>
+        <div id="header-col2">
+            <h5>Project B </h5>
+            <h2>BConnect</h2>
+        </div>
+        <div id="header-col3">
+            <!-- if this is home or chat page, include the logout button -->
+            <% if(page=="home" || page=="chat"){ %>
+                <button id="logout-btn">logout</button>
+            <% } %>
+        </div>
+    </div>
+    <div class="content">
+        <% if(page=="login"){ %>
+            <%- include("login_partial.ejs") %>
+        <% } %>
+        <% if(page=="generate"){ %>
+            <%- include("generate_number_partial.ejs") %>
+        <% } %>
+        <% if(page=="home" || page=="chat") { %>
+            <%- include("home_and_chat_inner_layout.ejs") %>
+        <% } %>
+    </div>
+    <div class="footer">
+
+    </div>
+
+    <!-- scripts -->
+    <% if(page=="home" || page=="chat"){ %>
+        <script src="scripts/cookieReader.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="scripts/logout.js"></script>
+        <% if(page=="home"){ %>
+        <script src="scripts/home.js"></script>
+        <% } else{ %>
+        <script src="scripts/chat.js"></script>
+        <% } %>
+    <% } %>
+    
+</body>
+</html>

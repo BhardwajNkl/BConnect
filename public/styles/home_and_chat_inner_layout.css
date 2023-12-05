@@ -1,0 +1,42 @@
+.content-main{
+    flex-grow: 1;
+    /* make it a flex container */
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+}
+.contact-area{
+    width: 20%;
+    /* border: solid 1px; */
+
+    /* make it a flex container */
+    display: flex;
+    flex-direction: column;
+}
+
+.message-area{
+    flex-grow: 1;
+    margin-left: 10pt;
+    border: solid 1px;
+
+    /* make it a flex container */
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* children of contact-area */
+#search-contact{
+    min-height: 30px;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+}
+.contact-name{
+    font-size: 20px;
+    margin-top: 10px;
+    text-align: center;
+    text-decoration: none;
+    border: solid 1px;
+    border-radius: 10%;
+}

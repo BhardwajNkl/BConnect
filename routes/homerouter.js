@@ -6,7 +6,7 @@ module.exports = (data)=>{
         const username = req.cookies.username;
         const contacts = getContacts(username);
         // temporary: we make every other user the contact of a user.
-        res.render("layout.ejs",{contacts, page:"home"});
+        res.render("site_layout.ejs",{contacts, page:"home"});
     });
         
     return router

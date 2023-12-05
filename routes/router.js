@@ -1,6 +1,7 @@
 const express = require("express")
 const homerouter = require("./homerouter")
 const chatrouter = require("./chatrouter")
+const generate_number_router = require("./generate_number_router")
 const login = require("../services/loginservice")
 const authentication = require("../services/authentication")
 const logoutrouter = require("./logoutrouter")
@@ -10,7 +11,7 @@ const router = express.Router()
 
 module.exports = (data)=>{
     router.get("/",(req, res)=>{
-        res.render("login.ejs",{message:""})
+        res.render("site_layout.ejs",{message:"", page:"login"})
     });
 
     router.post("/",(req, res)=>{
@@ -21,11 +22,12 @@ module.exports = (data)=>{
             res.cookie("username",username)
             res.redirect("home")
         } else{
-            res.render("login.ejs",{message:"login failed!"})
+            res.render("site_layout.ejs",{message:"login failed!"})
         }
         
     })
 
+    router.use("/generate", generate_number_router())
     router.use("/home", authentication, homerouter())
     router.use("/chat", authentication, chatrouter())
     router.use("/logout", logoutrouter())

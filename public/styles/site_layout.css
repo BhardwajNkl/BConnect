@@ -1,0 +1,61 @@
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* background-color: lavender; */
+    /* background-color: salmon; */
+    /* background: linear-gradient(to right,lightgreen, burlywood); */
+    background: linear-gradient(to right, lavenderblush, lavender);
+}
+.header{
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+#header-col1{
+    /* flex-grow: 0.2; */
+    width: 10%;
+}
+#header-col2{
+    /* flex-grow: 0.6; */
+    width: 80%;
+    /* make this a flex container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#header-col3{
+    /* flex-grow: 0.2; */
+    /* border-left: solid 1px; */
+    width: 10%;
+    /* make this a flex container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#header-col2>h5{
+    color: orange;
+    background-color: white;
+}
+
+#header-col2>h2{
+    margin-left: 2px;
+    color: blue;
+}
+
+.content{
+    flex-grow: 1;
+    
+    /* make it a flex container */
+    display: flex;
+    
+    /* justify-content: center;
+    align-items: center; */
+
+    /* new */
+    flex-direction: column;
+}
+

@@ -1,0 +1,19 @@
+<div class="content-main">
+    <div class="contact-area">
+        <input id="search-contact" placeholder="search">
+        <% contacts.forEach(contact => { %>
+            <% const chatLink = "chat?username="+contact.username %>
+            <a class="contact-name" href=<%= chatLink %>><%= contact.username %></a>
+        <% }); %>
+    </div>
+    <div class="message-area">
+        <!-- No chat opened!
+        <button id="send-message-btn">send</button> -->
+        <% if(page === "home") { %>
+            <!-- <div>No chat selected!</div> -->
+            <%- include("home_partial.ejs") %>
+        <% } else { %>
+            <%- include("chat_partial.ejs") %>
+        <% } %>
+    </div>
+</div>

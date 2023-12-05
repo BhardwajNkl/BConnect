@@ -1,0 +1,9 @@
+#message-area-content{
+    color:red;
+    font-size: 40px;
+    font-weight: bold;
+    display: flex;
+    height: 60%;
+    justify-content: center;
+    padding-top: 20%;
+}

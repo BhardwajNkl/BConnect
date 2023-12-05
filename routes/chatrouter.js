@@ -7,8 +7,7 @@ module.exports = (data)=>{
         const contacts = getContacts(username); // getting contacts of the logged in user to show
         const chatWithUsername = req.query.username; // the contact to which the logged in user wants to chat with.
         // NOTE: using the above, load previous text messages.
-        
-        res.render("layout.ejs",{contacts, page:"chat", chatWithUsername})
+        res.render("site_layout.ejs",{contacts, page:"chat", chatWithUsername})
     });
         
     return router

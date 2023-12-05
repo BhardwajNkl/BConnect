@@ -67,5 +67,5 @@ io.on('connection', (socket) => {
   });  
 
 server.listen(4000 ,()=>{
-    console.log("server started")
+    console.log("server started on 4000")
 })
