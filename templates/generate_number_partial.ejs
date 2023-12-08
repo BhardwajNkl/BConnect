@@ -4,10 +4,13 @@
             <% if(message) { %>
                 <b><%= message %></b><br>
             <% } %>
+            <% if(generatedNumber != null) { %>
+                <b><%= generatedNumber %></b><br>
+            <% } %>
             Create A Password<br>
-            <input name="username" type="text"><br><br>
+            <input name="password" type="text"><br><br>
             Confirm Password<br>
-            <input name="password" type="password"><br><br>
+            <input name="confirmPassword" type="password"><br><br>
             <button type="submit" name="generate-number-button">Generate BConnect Number</button><br><br>
             OR<br>
             <a href="/">Go To Login</a>

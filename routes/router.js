@@ -22,7 +22,7 @@ module.exports = (data)=>{
             res.cookie("username",username)
             res.redirect("home")
         } else{
-            res.render("site_layout.ejs",{message:"login failed!"})
+            res.render("site_layout.ejs",{message:"login failed!", page:"login"})
         }
         
     })

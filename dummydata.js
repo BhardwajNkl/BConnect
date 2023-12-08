@@ -1,24 +1,8 @@
 users = [
-    {
-        "username": "nikhil",
-        "password":"bhardwaj"
-    },
-    {
-        "username": "nishant",
-        "password":"sharma"
-    },
-    {
-        "username": "ashish",
-        "password":"kumar"
-    },
-    {
-        "username": "shubham",
-        "password":"tripathi"
-    },
-    {
-        "username": "saurabh",
-        "password":"pandey"
-    }
+    // {
+    //     "username": "123@b.connect",
+    //     "password":"bhardwaj123"
+    // }
 ]
 
 module.exports = users;

@@ -36,6 +36,17 @@ body{
 
 }
 
+#logout-btn{
+    border: none;
+    /* width: 80px; */
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    background-color: orange;
+    color: white;
+    padding: 2pt;
+    border-radius: 4pt;
+}
+
 #header-col2>h5{
     color: orange;
     background-color: white;
