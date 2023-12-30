@@ -5,7 +5,8 @@ const generate_number_router = require("./generate_number_router")
 const login = require("../services/loginservice")
 const authentication = require("../services/authentication")
 const logoutrouter = require("./logoutrouter")
-
+const search_router = require("./search_router")
+const saveContact_router = require("./saveContact_router")
 
 const router = express.Router()
 
@@ -31,6 +32,8 @@ module.exports = (data)=>{
     router.use("/home", authentication, homerouter())
     router.use("/chat", authentication, chatrouter())
     router.use("/logout", logoutrouter())
+    router.use("/search", authentication, search_router())
+    router.use("/saveContact",authentication, saveContact_router());
 
     return router
 }

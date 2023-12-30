@@ -1,9 +1,15 @@
 <div class="content-main">
     <div class="contact-area">
         <input id="search-contact" placeholder="search">
+        <div id="search-result">
+            
+        </div>
+        <div id="new-message-person">
+
+        </div>
         <% contacts.forEach(contact => { %>
             <% const chatLink = "chat?username="+contact.username %>
-            <a class="contact-name" href=<%= chatLink %>><%= contact.username %></a>
+            <a class="contact-name" href=<%= chatLink %>><%= contact.saved_name %></a>
         <% }); %>
     </div>
     <div class="message-area">

@@ -1,4 +1,4 @@
-const dummydata = require("../dummydata");
+const {users} = require("../dummydata");
 const crypto = require('crypto');
 
 // two functions
@@ -15,7 +15,7 @@ module.exports = (password, confirm_password)=>{
         }
         const newUserNumber = number+"@b.connect";
         // save this number in db, before that ensure that this number is not yet assigned to anyone else.
-        const isAssigned = dummydata.length == 0 ? false : dummydata.some(user=>user.username == newUserNumber);
+        const isAssigned = users.length == 0 ? false : users.some(user=>user.username == newUserNumber);
         if(!isAssigned){
             save_number_in_db(newUserNumber, password);
             // return to the user
@@ -35,8 +35,8 @@ module.exports = (password, confirm_password)=>{
 // 2. save this number and it's password in db
 const save_number_in_db = (number, password) => {
     // temporary access the list and append tis new number
-    dummydata.push({username:number, password});
-    // console.log(dummydata);
+    users.push({username:number, password});
+    // console.log(users);
 }
 
 

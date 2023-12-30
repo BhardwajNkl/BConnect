@@ -9,5 +9,14 @@ socket.emit("registerUserSocket",username);
 socket.on("receiveMessage",(messageData)=>{
     // just do something to indicate that someone has sent a message
     const {sender, receiver, message} = messageData;
-    alert(sender+": "+message);
+    // alert(sender+": "+message);
+
+    // better if we display this on top of contacts list as a new message
+    const chatLink = "chat?username="+sender;
+    const newMessageElement = document.createElement("a");
+    newMessageElement.setAttribute("class","contact-name");
+    newMessageElement.setAttribute("href",chatLink);
+    newMessageElement.innerHTML = "<b>"+sender+"</b>:"+message;
+    const newMessagePersonDiv = document.getElementById("new-message-person");
+    newMessagePersonDiv.appendChild(newMessageElement);
 })

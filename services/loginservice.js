@@ -1,4 +1,4 @@
-const users = require("../dummydata")
+const {users} = require("../dummydata")
 
 module.exports = (userCredentials)=>{
 
@@ -10,6 +10,5 @@ module.exports = (userCredentials)=>{
 
     // check the users array
     const user = users.find(u => u.username == userCredentials.username && u.password == userCredentials.password)
-    
     return user ? true: false;
 }

@@ -1,6 +1,6 @@
 const express = require("express")
 const router = express.Router()
-const getContacts = require("../services/getContacts")
+const {getContacts} = require("../services/getContacts")
 module.exports = (data)=>{
     router.get("/",(req, res)=>{
         const username = req.cookies.username;

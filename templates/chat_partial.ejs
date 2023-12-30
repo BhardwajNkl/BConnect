@@ -1,4 +1,19 @@
-<a href="home">back</a><br>
+<!-- show the b.connect number. and provide a button to add in contacts. -->
+<div id="chat-head">
+    <a href="home">back</a>
+    <% const isAlreadyInContacts = contacts.find(contact=>contact.username == chatWithUsername); %>
+    <% if(isAlreadyInContacts){ %>
+        <span id="chat-user-display-name"><b><%= isAlreadyInContacts.saved_name %></b></span>
+    <% } else{ %>
+        <span id="chat-user-display-name"><b><%= chatWithUsername %></b></span>
+        <button id="add-contact">+ contact</button>
+        <!-- show the below div only when the user clicks on add contact -->
+        <input id="new-contact-name" style="display: none;">
+        <button id="save-contact" style="display: none;">save</button>
+    <% } %>
+
+    
+</div>
 <div id="display-message-area">
     <!-- messages will be shown here -->
 </div>
